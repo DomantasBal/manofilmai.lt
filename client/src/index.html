@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- JS -->
+    <script defer type="module" src="js/index.js"></script>
+
+    <title>ManoFilmai</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <!-- <a href="">ManoFilmai</a> -->
+          <img src="/client/src/images/logo.png" alt="" />
+        </div>
+        <!-- NAV -->
+        <nav>
+          <ul>
+            <li>
+              <a href="" class="nav-link">Filmai</a>
+            </li>
+            <li>
+              <a href="" class="nav-link">Serialai</a>
+            </li>
+
+            <li class="watchlist-container">
+              <a id="watchlist-link">
+                Mano Sąrašas<i class="fa-solid fa-film"></i>
+                <span class="increment-element">0</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Movie Sidebar -->
+      <section class="sidebar">
+        <div class="watchlist-sidebar"></div>
+        <div id="clear-list" class="btn btn-sidebar">Išvalyti pasirinkimus</div>
+      </section>
+    </header>
+
+    <!-- SLIDER -->
+    <section class="movie-list">
+      <div class="swiper">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section class="movie-search">
+      <h2>Rinktis pagal žanrą</h2>
+      <div class="tag-wrap">
+        <div class="tag-container">
+          <span class="movie-tag">Drama</span>
+          <span class="movie-tag">Kriminalinis</span>
+          <span class="movie-tag">Veiksmo</span>
+          <span class="movie-tag">Trileris</span>
+          <span class="movie-tag">Istorinis</span>
+          <span class="movie-tag">Karinis</span>
+          <span class="movie-tag">Nuotykių</span>
+          <span class="movie-tag">Fantastinis</span>
+          <span class="movie-tag">Romantinis</span>
+          <span class="movie-tag">Komedija</span>
+          <span class="movie-tag">Kita</span>
+        </div>
+      </div>
+
+      <div class="filter-wrap">
+        <form class="movie-grid-filter">
+          <!-- Language -->
+          <select id="movie-lang">
+            <option value="">Kalba</option>
+            <option value="">EN</option>
+          </select>
+
+          <!-- Year -->
+          <select id="movie-year">
+            <option value="">Metai</option>
+            <option value="">1993</option>
+            <option value="">1993</option>
+            <option value="">1993</option>
+            <option value="">1993</option>
+            <option value="">1993</option>
+            <option value="">1993</option>
+            <option value="">1993</option>
+            <option value="">1993</option>
+          </select>
+
+          <!-- Genre -->
+          <select id="movie-genre">
+            <option value="">Žanras</option>
+            <option value="">Veiksmo</option>
+          </select>
+
+          <select id="movie-score">
+            <option value="">Įvertinimas</option>
+            <option value="">5+</option>
+            <option value="">6+</option>
+          </select>
+
+          <input class="btn" type="submit" value="Filtruoti" />
+        </form>
+      </div>
+    </section>
+
+    <!-- MOVIE GRID -->
+    <section class="container">
+      <h2>Visi Filmai</h2>
+      <div id="popular-movies" class="movie-grid"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="logo"><span>ManoFilmai</span></div>
+        <div class="social-links">
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
