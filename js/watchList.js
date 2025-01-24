@@ -13,13 +13,16 @@ class Watchlist {
     this.watchlistCartIcon = document.querySelector('.increment-element'); // Badge Icon
     this.watchlistCartIcon.textContent = this.watchlist.length;
     this.watchlistClear = document.querySelector('#clear-list');
+    this.hideBtn = document.querySelector('#hide-sidebar');
 
     // Listeners
     this.watchlistBtn.forEach((btn) => btn.addEventListener('click', this.handleWatchlist.bind(this)));
     this.watchlistClear.addEventListener('click', this.clearList.bind(this));
     this.watchlistLink.addEventListener('click', this.openCloseSidebar.bind(this));
+    this.hideBtn.addEventListener('click', this.hideSidebar.bind(this));
 
     this.loadWatchlistButtons();
+    this.watchlistRender();
   }
 
   loadWatchlistButtons() {
@@ -73,6 +76,7 @@ class Watchlist {
     this.watchlistBtn.forEach((btn) => {
       btn.innerHTML = '<i class="fa-regular fa-heart heart-pop"></i><span class="watchlist-text">Įsiminti</span>';
       btn.classList.remove('added-to-watchlist');
+      this.watchlistLink.classList.remove('sidebar-open');
     });
   }
 
@@ -85,7 +89,16 @@ class Watchlist {
   openCloseSidebar(e) {
     const state = e.target.classList.toggle('sidebar-open');
     state ? (this.sidebar.style.right = '0px') : (this.sidebar.style.right = '-1000px');
-    // this.watchlistRender();
+  }
+
+  hideSidebar(e) {
+    const sidebarState = this.watchlistLink.classList.contains('sidebar-open');
+    console.log(sidebarState);
+
+    if (sidebarState) {
+      this.sidebar.style.right = '-1000px';
+      this.watchlistLink.classList.remove('sidebar-open');
+    }
   }
 
   btnIconChange(btn) {
