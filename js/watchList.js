@@ -121,18 +121,29 @@ class Watchlist {
   }
 
   sidebarRemoveMovie() {
-    const xIcon = document.querySelectorAll('.fa-xmark');
+    const xIcons = document.querySelectorAll('.fa-xmark');
 
-    this.watchlist.length === 0 && this.resetUI();
+    if (this.watchlist.length === 0) {
+      this.resetUI();
+    }
 
-    xIcon.forEach((icon) =>
+    xIcons.forEach((icon) => {
       icon.addEventListener('click', (e) => {
-        const id = e.target.getAttribute('data-id');
-        this.removeMovie(id);
+        const movieId = e.target.getAttribute('data-id');
+        this.removeMovie(movieId);
         this.watchlistRender();
         this.loadWatchlistButtons();
-      })
-    );
+
+        const movieCard = this.movieGrid.querySelector(`.card[data-movie-id="${movieId}"]`);
+        if (movieCard) {
+          const btn = movieCard.querySelector('.btn-watchlist');
+          if (btn) {
+            btn.innerHTML = '<i class="fa-regular fa-heart heart-pop"></i><span class="watchlist-text">Įsiminti</span>';
+            btn.classList.remove('added-to-watchlist');
+          }
+        }
+      });
+    });
   }
 
   watchlistRender() {
