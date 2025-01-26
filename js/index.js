@@ -6,19 +6,21 @@ import Watchlist from './watchList.js';
 
 const currentPath = window.location.pathname;
 
-if (currentPath === '/index.html' || currentPath === '/') {
-  // Slider
-  const slider = new Slider();
-  slider.initSettings();
-  slider.addSlides();
+// if (currentPath === '/index.html' || currentPath === '/') {
 
-  // Grid
-  const render = new Render();
-  render.movieGrid(movies);
+// }
 
-  // Filtering
-  const filtering = new Filtering();
-}
+// Slider
+const slider = new Slider();
+slider.initSettings();
+slider.addSlides();
+
+// Grid
+const render = new Render();
+render.movieGrid(movies);
+
+// Filtering
+const filtering = new Filtering();
 
 // Watchlist
 const watchlist = new Watchlist();
