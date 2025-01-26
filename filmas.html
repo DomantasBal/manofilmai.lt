@@ -8,27 +8,32 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- JS -->
-    <script src="js/index.js" defer></script>
+    <script defer type="module" src="/js/index.js" defer></script>
+    <script type="module" src="/js/loadSingleMovie.js"></script>
+
     <title>Filmo pavadinimas</title>
   </head>
   <body>
     <header class="main-header">
       <div class="container">
-        <div class="logo"><a href="">ManoFilmai</a></div>
+        <div class="logo">
+          <a href="/"><img src="./images/logo.png" alt="" /></a>
+        </div>
         <!-- NAV -->
         <nav>
           <ul>
@@ -39,23 +44,28 @@
               <a href="" class="nav-link">Serialai</a>
             </li>
 
-            <li>
-              <a class="nav-link">
+            <li class="watchlist-container">
+              <a id="watchlist-link">
                 Mano Sąrašas<i class="fa-solid fa-film"></i>
+                <span class="increment-element">0</span>
               </a>
             </li>
           </ul>
         </nav>
       </div>
+      <!-- Movie Sidebar -->
+      <section class="sidebar">
+        <div class="watchlist-sidebar"></div>
+        <div id="clear-list" class="btn btn-sidebar">Išvalyti pasirinkimus</div>
+        <div id="hide-sidebar" class="btn btn-sidebar hide-btn"><i class="fa-solid fa-eye-slash"></i></div>
+      </section>
     </header>
 
     <!-- Movie Details -->
     <section class="container">
       <div class="back">
         <a class="btn" href="index.html">Atgal</a>
-        <div class="btn btn-wishlist">
-          <i class="fa-regular fa-heart"></i> Rinktis
-        </div>
+        <div class="btn btn-wishlist"><i class="fa-regular fa-heart"></i> Rinktis</div>
       </div>
       <!-- Movie Details Output -->
       <div id="movie-details">
@@ -75,13 +85,11 @@
             </p>
             <p class="text-muted">Metai: 1993</p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              atque molestiae error debitis provident dolore hic odit, impedit
-              sint, voluptatum consectetur assumenda expedita perferendis
-              obcaecati veritatis voluptatibus. Voluptatum repellat suscipit,
-              quae molestiae cupiditate modi libero dolorem commodi obcaecati!
-              Ratione quia corporis recusandae delectus perspiciatis consequatur
-              ipsam. Cumque omnis ad recusandae.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores atque molestiae error debitis provident
+              dolore hic odit, impedit sint, voluptatum consectetur assumenda expedita perferendis obcaecati veritatis
+              voluptatibus. Voluptatum repellat suscipit, quae molestiae cupiditate modi libero dolorem commodi
+              obcaecati! Ratione quia corporis recusandae delectus perspiciatis consequatur ipsam. Cumque omnis ad
+              recusandae.
             </p>
             <h5>Žanras</h5>
 
@@ -100,7 +108,7 @@
         <div class="details-bottom">
           <h2>Anonsas</h2>
 
-          <div class="trailer">
+          <!-- <div class="trailer">
             <iframe
               width="1200"
               height="600"
@@ -111,7 +119,7 @@
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
             ></iframe>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -119,17 +127,13 @@
     <!-- Footer -->
     <footer class="main-footer">
       <div class="container">
-        <div class="logo"><span>ManoFilmai</span></div>
+        <div class="logo">
+          <a href="/"><span>ManoFilmai</span></a>
+        </div>
         <div class="social-links">
-          <a href="https://www.facebook.com" target="_blank"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="https://www.twitter.com" target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="https://www.instagram.com" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </footer>

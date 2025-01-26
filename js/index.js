@@ -4,17 +4,21 @@ import Slider from './slider.js';
 import Filtering from './filtering.js';
 import Watchlist from './watchList.js';
 
-// Slider
-const slider = new Slider();
-slider.initSettings();
-slider.addSlides();
+const currentPath = window.location.pathname;
 
-// Grid
-const render = new Render();
-render.movieGrid(movies);
+if (currentPath === '/index.html' || currentPath === '/') {
+  // Slider
+  const slider = new Slider();
+  slider.initSettings();
+  slider.addSlides();
 
-// Filtering
-const filtering = new Filtering();
+  // Grid
+  const render = new Render();
+  render.movieGrid(movies);
+
+  // Filtering
+  const filtering = new Filtering();
+}
 
 // Watchlist
 const watchlist = new Watchlist();

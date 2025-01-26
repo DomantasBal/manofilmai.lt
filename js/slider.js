@@ -28,39 +28,40 @@ class Slider {
   initSettings() {
     const swiper = new Swiper('.swiper', {
       direction: 'horizontal',
-      slidesPerView: 1,
-      spaceBetween: 30,
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      spaceBetween: 25,
       autoplay: {
         delay: 3000,
+        disableOnInteraction: false,
       },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        renderBullet: (index, className) => {
+          return `<span class="${className}">${index + 1}</span>`;
         },
       },
       breakpoints: {
         320: {
           slidesPerView: 1,
+          slidesPerGroup: 1,
         },
         480: {
           slidesPerView: 1,
+          slidesPerGroup: 1,
         },
-        600: {
-          slidesPerView: 1,
-        },
-        700: {
+        768: {
           slidesPerView: 2,
+          slidesPerGroup: 2,
         },
-        900: {
+        1024: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
         },
-        1200: {
+        1440: {
           slidesPerView: 4,
-        },
-        1600: {
-          slidesPerView: 6,
+          slidesPerGroup: 4,
         },
       },
     });

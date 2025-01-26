@@ -137,9 +137,8 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   transition: transform 0.25s;
-  min-width: 400px;
+  /* width: 400px; */
 }
 
 .swiper-slide:hover {
