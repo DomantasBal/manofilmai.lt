@@ -24,3 +24,5 @@ const filtering = new Filtering();
 
 // Watchlist
 const watchlist = new Watchlist();
+
+console.log('index.js');
