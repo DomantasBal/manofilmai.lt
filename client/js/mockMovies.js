@@ -51,8 +51,7 @@ const movies = [
     rating: 8.5,
     year: 2003,
     poster: 'https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg',
-    detailsUrl:
-      'https://www.themoviedb.org/movie/122-the-lord-of-the-rings-the-return-of-the-king',
+    detailsUrl: 'https://www.themoviedb.org/movie/122-the-lord-of-the-rings-the-return-of-the-king',
   },
   {
     id: 13,

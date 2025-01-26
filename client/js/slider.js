@@ -10,7 +10,7 @@ class Slider {
     movies.forEach((movie) => {
       this.slider.innerHTML += `
           <div class="swiper-slide">
-        <a href="/client/src/filmas.html">
+        <a href="/filmas.html?id=${movie.id}">
           <img
             src="${movie.poster}"
             alt=""

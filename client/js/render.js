@@ -20,7 +20,7 @@ class Render {
 
       movieCard.innerHTML = `
         <div>
-          <a href="/client/src/filmas.html">
+          <a href="/filmas.html?id=${movie.id}">
             <img src="${movie.poster}" class="card-img-top" alt="" />
           </a>
           <div class="card-body">
