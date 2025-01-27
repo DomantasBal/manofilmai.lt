@@ -1,12 +1,10 @@
-import movies from './mockMovies.js';
-
 // ################### SLIDER ###################
 class Slider {
   constructor() {
     this.slider = document.querySelector('.swiper-wrapper');
   }
 
-  addSlides() {
+  addSlides(movies) {
     movies.forEach((movie) => {
       this.slider.innerHTML += `
           <div class="swiper-slide">
@@ -62,6 +60,15 @@ class Slider {
         1440: {
           slidesPerView: 4,
           slidesPerGroup: 4,
+        },
+        1920: {
+          slidesPerView: 7,
+          slidesPerGroup: 7,
+        },
+
+        2560: {
+          slidesPerView: 8,
+          slidesPerGroup: 8,
         },
       },
     });

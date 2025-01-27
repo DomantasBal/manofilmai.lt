@@ -1,6 +1,6 @@
 class Render {
   constructor() {
-    this.grid = document.getElementById('popular-movies');
+    this.grid = document.getElementById('movie-grid');
   }
 
   movieGrid(movies) {

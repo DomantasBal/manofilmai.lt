@@ -5,7 +5,7 @@ import movies from './mockMovies.js';
 class Watchlist {
   constructor() {
     this.selectedMovies = [];
-    this.movieGrid = document.querySelector('#popular-movies'); // Movie Grid
+    this.movieGrid = document.querySelector('#movie-grid'); // Movie Grid
     this.watchlistLink = document.querySelector('#watchlist-link'); // Menu Link
     this.watchlistBtn = document.querySelectorAll('.btn-watchlist'); // Button
     this.sidebar = document.querySelector('.sidebar'); // Sidebar
