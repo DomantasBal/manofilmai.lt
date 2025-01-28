@@ -8,6 +8,9 @@ const movies = [
     year: 1994,
     poster: 'https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/278-the-shawshank-redemption',
+    description:
+      'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
+    trailer: 'https://www.youtube.com/embed/6hB3S9bIaco',
   },
   {
     id: 238,
@@ -17,6 +20,9 @@ const movies = [
     year: 1972,
     poster: 'https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/238-the-godfather',
+    description:
+      'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
+    trailer: 'https://www.youtube.com/embed/sY1S34973zA',
   },
   {
     id: 155,
@@ -26,6 +32,9 @@ const movies = [
     year: 2008,
     poster: 'https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/155-the-dark-knight',
+    description:
+      'When the menace known as the Joker emerges, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.',
+    trailer: 'https://www.youtube.com/embed/EXeTwQWrcwY',
   },
   {
     id: 424,
@@ -35,6 +44,9 @@ const movies = [
     year: 1993,
     poster: 'https://image.tmdb.org/t/p/w500/c8Ass7acuOe4za6DhSattE359gr.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/424-schindlers-list',
+    description:
+      'In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.',
+    trailer: 'https://www.youtube.com/embed/gG22XNhtnoY',
   },
   {
     id: 680,
@@ -44,6 +56,9 @@ const movies = [
     year: 1994,
     poster: 'https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/680-pulp-fiction',
+    description:
+      "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    trailer: 'https://www.youtube.com/embed/s7EdQ4FqbhY',
   },
   {
     id: 122,
@@ -53,6 +68,9 @@ const movies = [
     year: 2003,
     poster: 'https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/122-the-lord-of-the-rings-the-return-of-the-king',
+    description:
+      "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+    trailer: 'https://www.youtube.com/embed/r5X-hFf6Bwo',
   },
   {
     id: 13,
@@ -62,6 +80,9 @@ const movies = [
     year: 1994,
     poster: 'https://image.tmdb.org/t/p/w500/saHP97rTPS5eLmrLQEcANmKrsFl.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/13-forrest-gump',
+    description:
+      'Forrest Gump, a man with a low IQ, recounts the early years of his life when he found himself in the middle of key historical events.',
+    trailer: 'https://www.youtube.com/embed/bLvqoHBptjg',
   },
   {
     id: 27205,
@@ -71,6 +92,9 @@ const movies = [
     year: 2010,
     poster: 'https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/27205-inception',
+    description:
+      'A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.',
+    trailer: 'https://www.youtube.com/embed/YoHD9XEInc0',
   },
   {
     id: 550,
@@ -80,6 +104,9 @@ const movies = [
     year: 1999,
     poster: 'https://image.tmdb.org/t/p/w500/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/550-fight-club',
+    description:
+      'An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much more.',
+    trailer: 'https://www.youtube.com/embed/qtRKdVHc-cE',
   },
   {
     id: 157336,
@@ -89,6 +116,8 @@ const movies = [
     year: 2014,
     poster: 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/157336-interstellar',
+    description: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    trailer: 'https://www.youtube.com/embed/zSWdZVtXT7E',
   },
   {
     id: 603,
@@ -98,6 +127,9 @@ const movies = [
     year: 1999,
     poster: 'https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/603-the-matrix',
+    description:
+      'A computer hacker learns about the true nature of his reality and his role in the war against its controllers.',
+    trailer: 'https://www.youtube.com/embed/vKQi3bBA1y8',
   },
   {
     id: 98,
@@ -107,6 +139,9 @@ const movies = [
     year: 2000,
     poster: 'https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/98-gladiator',
+    description:
+      'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.',
+    trailer: 'https://www.youtube.com/embed/owK1qxDselE',
   },
   {
     id: 68718,
@@ -116,6 +151,9 @@ const movies = [
     year: 2012,
     poster: 'https://image.tmdb.org/t/p/w500/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/68718-django-unchained',
+    description:
+      'With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation owner in Mississippi.',
+    trailer: 'https://www.youtube.com/embed/0fUCuvNlOCg',
   },
 ];
 
