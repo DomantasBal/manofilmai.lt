@@ -19,10 +19,10 @@ if (currentPath === '/index.html' || currentPath === '/') {
 
   // Filtering
   const filtering = new Filtering();
+} else {
+  const singleMovie = new SingleMovie();
+  singleMovie.getSingleMovieData(movies);
 }
-
-const singleMovie = new SingleMovie();
-singleMovie.getSingleMovieData(movies);
 
 // Watchlist
 const watchlist = new Watchlist();
