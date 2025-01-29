@@ -328,7 +328,7 @@ ul {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  padding: 30px;
+  padding: 0px 30px 30px;
 }
 .movie-tag {
   border: solid 2px var(--color-secondary);
@@ -372,18 +372,19 @@ ul {
 
 /* Grid Filter */
 .filter-wrap {
-  width: 50%;
   padding: 10px;
-
-  border-radius: 4px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .movie-grid-filter {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  text-transform: none;
+}
+
+.movie-grid-filter label {
+  padding: 5px;
 }
 
 .movie-grid-filter select {
@@ -393,10 +394,16 @@ ul {
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   padding: 5px;
+  margin: 0px 10px;
 }
 
-.movie-grid-filter input[type='submit'] {
-  background: var(--color-secondary);
+.movie-grid-filter input[type='number'] {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  padding: 5px;
 }
 
 /* Watchlist */

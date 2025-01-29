@@ -12,7 +12,6 @@ class SingleMovie {
   }
 
   renderSingleMovie(movie) {
-    console.log(movie);
     this.movieDetailsContainer.innerHTML = `
      <div class="details-top">
           <div>

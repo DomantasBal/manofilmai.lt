@@ -1,11 +1,11 @@
-// ##################################### MOCK DATA ##############################################
 const movies = [
   {
-    id: 278, // TMDB Movie ID
+    id: 278,
     title: 'Pabėgimas iš Šoušenko',
     genre: ['Drama', 'Kriminalinis'],
-    rating: 8.7,
+    rating: 4.0,
     year: 1994,
+    original_language: 'en',
     poster: 'https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/278-the-shawshank-redemption',
     description:
@@ -16,8 +16,9 @@ const movies = [
     id: 238,
     title: 'Krikštatėvis',
     genre: ['Drama', 'Kriminalinis'],
-    rating: 8.7,
+    rating: 6.7,
     year: 1972,
+    original_language: 'en',
     poster: 'https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/238-the-godfather',
     description:
@@ -30,6 +31,7 @@ const movies = [
     genre: ['Drama', 'Veiksmo', 'Kriminalinis', 'Trileris'],
     rating: 8.5,
     year: 2008,
+    original_language: 'en',
     poster: 'https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/155-the-dark-knight',
     description:
@@ -40,8 +42,9 @@ const movies = [
     id: 424,
     title: 'Šindlerio sąrašas',
     genre: ['Drama', 'Istorinis', 'Karinis'],
-    rating: 8.6,
+    rating: 9.6,
     year: 1993,
+    original_language: 'en',
     poster: 'https://image.tmdb.org/t/p/w500/c8Ass7acuOe4za6DhSattE359gr.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/424-schindlers-list',
     description:
@@ -54,6 +57,7 @@ const movies = [
     genre: ['Drama', 'Kriminalinis'],
     rating: 8.5,
     year: 1994,
+    original_language: 'en',
     poster: 'https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/680-pulp-fiction',
     description:
@@ -64,8 +68,9 @@ const movies = [
     id: 122,
     title: 'Žiedų valdovas: Karaliaus sugrįžimas',
     genre: ['Nuotykių', 'Fantastinis', 'Veiksmo'],
-    rating: 8.5,
+    rating: 3.5,
     year: 2003,
+    original_language: 'en',
     poster: 'https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/122-the-lord-of-the-rings-the-return-of-the-king',
     description:
@@ -78,6 +83,7 @@ const movies = [
     genre: ['Komedija', 'Drama', 'Romantinis'],
     rating: 8.5,
     year: 1994,
+    original_language: 'en',
     poster: 'https://image.tmdb.org/t/p/w500/saHP97rTPS5eLmrLQEcANmKrsFl.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/13-forrest-gump',
     description:
@@ -88,8 +94,9 @@ const movies = [
     id: 27205,
     title: 'Pradžia',
     genre: ['Veiksmo', 'Nuotykių', 'Mokslinė fantastika'],
-    rating: 8.4,
+    rating: 5.4,
     year: 2010,
+    original_language: 'en',
     poster: 'https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/27205-inception',
     description:
@@ -97,34 +104,12 @@ const movies = [
     trailer: 'https://www.youtube.com/embed/YoHD9XEInc0',
   },
   {
-    id: 550,
-    title: 'Kovos klubas',
-    genre: ['Drama', 'Trileris'],
-    rating: 8.3,
-    year: 1999,
-    poster: 'https://image.tmdb.org/t/p/w500/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg',
-    detailsUrl: 'https://www.themoviedb.org/movie/550-fight-club',
-    description:
-      'An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much more.',
-    trailer: 'https://www.youtube.com/embed/qtRKdVHc-cE',
-  },
-  {
-    id: 157336,
-    title: 'Tarp žvaigždžių',
-    genre: ['Nuotykių', 'Drama', 'Mokslinė fantastika'],
-    rating: 8.4,
-    year: 2014,
-    poster: 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
-    detailsUrl: 'https://www.themoviedb.org/movie/157336-interstellar',
-    description: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-    trailer: 'https://www.youtube.com/embed/zSWdZVtXT7E',
-  },
-  {
     id: 603,
     title: 'Matrica',
     genre: ['Veiksmo', 'Mokslinė fantastika'],
-    rating: 8.3,
-    year: 1999,
+    rating: 3.3,
+    year: 2008,
+    original_language: 'en',
     poster: 'https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/603-the-matrix',
     description:
@@ -135,25 +120,14 @@ const movies = [
     id: 98,
     title: 'Gladiatorius',
     genre: ['Veiksmo', 'Nuotykių', 'Drama'],
-    rating: 8.3,
-    year: 2000,
+    rating: 2.3,
+    year: 2008,
+    original_language: 'lt',
     poster: 'https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg',
     detailsUrl: 'https://www.themoviedb.org/movie/98-gladiator',
     description:
       'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.',
     trailer: 'https://www.youtube.com/embed/owK1qxDselE',
-  },
-  {
-    id: 68718,
-    title: 'Django Unchained',
-    genre: ['Drama', 'Veiksmo', 'Vakarietiškas'],
-    rating: 8.3,
-    year: 2012,
-    poster: 'https://image.tmdb.org/t/p/w500/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg',
-    detailsUrl: 'https://www.themoviedb.org/movie/68718-django-unchained',
-    description:
-      'With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation owner in Mississippi.',
-    trailer: 'https://www.youtube.com/embed/0fUCuvNlOCg',
   },
 ];
 

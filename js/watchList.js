@@ -4,6 +4,7 @@ import movies from './mockMovies.js';
 
 class Watchlist {
   constructor() {
+    console.log(123);
     this.selectedMovies = [];
     this.movieGrid = document.querySelector('#movie-grid'); // Movie Grid
     this.watchlistLink = document.querySelector('#watchlist-link'); // Menu Link
@@ -27,7 +28,7 @@ class Watchlist {
 
   loadWatchlistButtons() {
     this.watchlistBtn.forEach((btn) => {
-      const movieId = btn.closest('.card').getAttribute('data-movie-id');
+      const movieId = btn.closest('.card').getAttribute('data-movie-id') || null;
       if (this.watchlist.some((movie) => movie.id == movieId)) {
         btn.classList.add('added-to-watchlist');
         btn.innerHTML = '<i class="fa-solid fa-heart heart-pop"></i><span class="watchlist-text">Įsiminta</span>';

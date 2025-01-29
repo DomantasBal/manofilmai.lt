@@ -82,48 +82,39 @@
           <span class="movie-tag">Kita</span>
         </div>
       </div>
-
-      <div class="filter-wrap">
-        <form class="movie-grid-filter">
-          <!-- Language -->
-          <select id="movie-lang">
-            <option value="">Kalba</option>
-            <option value="">EN</option>
-          </select>
-
-          <!-- Year -->
-          <select id="movie-year">
-            <option value="">Metai</option>
-            <option value="">1993</option>
-            <option value="">1993</option>
-            <option value="">1993</option>
-            <option value="">1993</option>
-            <option value="">1993</option>
-            <option value="">1993</option>
-            <option value="">1993</option>
-            <option value="">1993</option>
-          </select>
-
-          <!-- Genre -->
-          <select id="movie-genre">
-            <option value="">Žanras</option>
-            <option value="">Veiksmo</option>
-          </select>
-
-          <select id="movie-score">
-            <option value="">Įvertinimas</option>
-            <option value="">5+</option>
-            <option value="">6+</option>
-          </select>
-
-          <input class="btn" type="submit" value="Filtruoti" />
-        </form>
-      </div>
     </section>
 
     <!-- MOVIE GRID -->
     <section class="container-wide">
       <h2>Visi Filmai</h2>
+
+      <!-- Filter bar -->
+      <div class="filter-wrap">
+        <div class="movie-grid-filter">
+          <!-- Language -->
+          <select id="country-filter">
+            <option value="">Šalis</option>
+            <option value="en">EN</option>
+            <option value="lt">LT</option>
+          </select>
+
+          <!-- Year -->
+          <select name="" id="year-filter">
+            <option value="metai">Metai</option>
+            <option value="2025">2025</option>
+            <option value="2008">2008</option>
+            <option value="1994">1994</option>
+          </select>
+
+          <!-- Rating -->
+          <div>
+            <label for="rating-filter">IMDB</label>
+            <input type="number" name="imdb-rating" id="rating-filter" value="10" min="1" max="10" maxlength="10" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Movie Grid OUT -->
       <div id="movie-grid" class="movie-grid"></div>
     </section>
 
