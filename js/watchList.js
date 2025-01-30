@@ -1,10 +1,7 @@
-// ################### WATCHLIST ###################
-
 import movies from './mockMovies.js';
 
 class Watchlist {
   constructor() {
-    console.log(123);
     this.selectedMovies = [];
     this.movieGrid = document.querySelector('#movie-grid'); // Movie Grid
     this.watchlistLink = document.querySelector('#watchlist-link'); // Menu Link
@@ -28,7 +25,11 @@ class Watchlist {
 
   loadWatchlistButtons() {
     this.watchlistBtn.forEach((btn) => {
-      const movieId = btn.closest('.card').getAttribute('data-movie-id') || null;
+      let movieId = null;
+      movieId = btn.getAttribute('data-movie-id');
+
+      if (!movieId) return;
+
       if (this.watchlist.some((movie) => movie.id == movieId)) {
         btn.classList.add('added-to-watchlist');
         btn.innerHTML = '<i class="fa-solid fa-heart heart-pop"></i><span class="watchlist-text">Įsiminta</span>';
@@ -38,6 +39,7 @@ class Watchlist {
 
   handleWatchlist(e) {
     const button = e.target.closest('.btn-watchlist');
+
     this.watchlistData(button);
     this.btnIconChange(button);
     this.cartIconChange();
@@ -45,7 +47,11 @@ class Watchlist {
   }
 
   watchlistData(btn) {
-    const movieId = btn.closest('.card').getAttribute('data-movie-id');
+    let movieId = null;
+    movieId = btn.getAttribute('data-movie-id');
+
+    if (!movieId) return;
+
     const movieIndex = this.watchlist.findIndex((movie) => movie.id == movieId);
     movieIndex !== -1 ? this.removeMovie(movieId) : this.addMovie(movieId);
   }
@@ -70,7 +76,7 @@ class Watchlist {
     this.resetUI();
   }
 
-  resetUI(btn) {
+  resetUI() {
     this.watchlistCartIcon.textContent = 0;
     this.watchlistCartIcon.classList.add('hidden');
     this.sidebar.style.right = '-1000px';
@@ -92,10 +98,8 @@ class Watchlist {
     state ? (this.sidebar.style.right = '0px') : (this.sidebar.style.right = '-1000px');
   }
 
-  hideSidebar(e) {
+  hideSidebar() {
     const sidebarState = this.watchlistLink.classList.contains('sidebar-open');
-    console.log(sidebarState);
-
     if (sidebarState) {
       this.sidebar.style.right = '-1000px';
       this.watchlistLink.classList.remove('sidebar-open');
@@ -105,7 +109,7 @@ class Watchlist {
   btnIconChange(btn) {
     const isAdded = btn.classList.toggle('added-to-watchlist');
     const heartIcon = btn.querySelector('i');
-    const movieId = btn.closest('.card').getAttribute('data-movie-id');
+    const movieId = btn.getAttribute('data-movie-id') || btn.closest('.card')?.getAttribute('data-movie-id');
     const isInStorage = this.watchlist.find((movie) => movie.id == movieId);
 
     if (isAdded || isInStorage) {
@@ -135,7 +139,7 @@ class Watchlist {
         this.watchlistRender();
         this.loadWatchlistButtons();
 
-        const movieCard = this.movieGrid.querySelector(`.card[data-movie-id="${movieId}"]`);
+        const movieCard = this.movieGrid?.querySelector(`.card[data-movie-id="${movieId}"]`);
         if (movieCard) {
           const btn = movieCard.querySelector('.btn-watchlist');
           if (btn) {
@@ -154,19 +158,13 @@ class Watchlist {
       const movieElement = document.createElement('div');
       movieElement.classList.add('sidebar-movie');
       movieElement.setAttribute('movie-data-id', movie.id);
-
-      movieElement.innerHTML = `
-          <p class="movie-number">${index + 1}</p>
-          <img src="${movie.poster}" alt="${movie.title}" />
-          <p class="movie-title-sidebar">${movie.title}</p>
-          <div class="controls">
-            <i class="fa-solid fa-xmark" data-id="${movie.id}"></i>
-          </div>
-        `;
-
+      movieElement.innerHTML = `<p class="movie-number">${index + 1}</p><img src="${movie.poster}" alt="${
+        movie.title
+      }" /><p class="movie-title-sidebar">${
+        movie.title
+      }</p><div class="controls"><i class="fa-solid fa-xmark" data-id="${movie.id}"></i></div>`;
       sidebarContent.appendChild(movieElement);
     });
-
     this.sidebarRemoveMovie();
   }
 }

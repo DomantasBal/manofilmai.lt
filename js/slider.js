@@ -8,7 +8,7 @@ class Slider {
     movies.forEach((movie) => {
       this.slider.innerHTML += `
           <div class="swiper-slide">
-        <a href="/filmas.html?id=${movie.id}">
+        <a href="/single.html?id=${movie.id}">
           <img
             src="${movie.poster}"
             alt=""

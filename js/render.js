@@ -16,11 +16,10 @@ class Render {
     movies.forEach((movie) => {
       const movieCard = document.createElement('div');
       movieCard.classList.add('card');
-      movieCard.setAttribute('data-movie-id', movie.id);
 
       movieCard.innerHTML = `
         <div>
-          <a href="/filmas.html?id=${movie.id}">
+          <a href="/single.html?id=${movie.id}">
             <img src="${movie.poster}" class="card-img-top" alt="" />
           </a>
           <div class="card-body">
@@ -32,7 +31,7 @@ class Render {
             </div>
           </div>
         </div>
-        <div class="btn btn-watchlist">
+        <div class="btn btn-watchlist" data-movie-id="${movie.id}">
         <i class="fa-regular fa-heart"></i>
         <span class="watchlist-text">Įsiminti</span>
         </div>

@@ -1,17 +1,34 @@
 class SingleMovie {
   constructor() {
     this.movieDetailsContainer = document.querySelector('#movie-details');
+    this.controlsContainer = document.querySelector('.single-controls');
   }
 
   getSingleMovieData(movies) {
     const urlParams = new URLSearchParams(window.location.search);
     const movieId = urlParams.get('id');
     const movieData = movies.find((movie) => movie.id == movieId);
-
+    this.movieData = movieData;
     this.renderSingleMovie(movieData);
   }
 
+  _renderControls(movieId) {
+    const controls = `
+     <!-- Back btn -->
+        <div><a class="btn" href="index.html">Atgal</a></div>
+
+        <!-- Watchlsit btn -->
+        <div class="btn btn-watchlist single" data-movie-id="${movieId}">
+          <i class="fa-regular fa-heart"></i>
+          <span class="watchlist-text">Įsiminti</span>
+        </div>
+    `;
+    this.controlsContainer.innerHTML = controls;
+  }
+
   renderSingleMovie(movie) {
+    this._renderControls(movie.id);
+
     this.movieDetailsContainer.innerHTML = `
      <div class="details-top">
           <div>

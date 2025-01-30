@@ -42,9 +42,10 @@ ul {
   font-weight: 700;
 }
 
-.back {
+.single-controls {
   margin-top: 30px;
-  text-align: left;
+  display: flex;
+  align-items: center;
 }
 
 .btn {
@@ -414,6 +415,11 @@ ul {
   margin: 5px auto 10px;
   text-align: center;
 }
+.btn-watchlist.single {
+  max-width: 200px;
+  margin: 0 10px;
+}
+
 .watchlist-text {
   margin-left: 5px;
 }
