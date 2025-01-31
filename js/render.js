@@ -1,6 +1,9 @@
+import movies from './mockMovies.js';
+
 class Render {
   constructor() {
     this.grid = document.getElementById('movie-grid');
+    this.movies = movies;
   }
 
   movieGrid(movies) {

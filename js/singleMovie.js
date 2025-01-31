@@ -15,7 +15,7 @@ class SingleMovie {
   _renderControls(movieId) {
     const controls = `
      <!-- Back btn -->
-        <div><a class="btn" href="index.html">Atgal</a></div>
+        <div><a class="btn" href="/">Atgal</a></div>
 
         <!-- Watchlsit btn -->
         <div class="btn btn-watchlist single" data-movie-id="${movieId}">

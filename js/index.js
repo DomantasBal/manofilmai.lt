@@ -4,25 +4,40 @@ import Slider from './slider.js';
 import Filtering from './filtering.js';
 import Watchlist from './watchList.js';
 import SingleMovie from './singleMovie.js';
+import Search from './search.js';
 
-const currentPath = window.location.pathname;
+import Router from './router.js';
+const router = new Router();
 
-if (currentPath === '/index.html' || currentPath === '/') {
-  // Slider
-  const slider = new Slider();
-  slider.initSettings();
-  slider.addSlides(movies);
+switch (router.getRoute()) {
+  case '/':
+    {
+      // Slider
+      const slider = new Slider();
+      slider.initSettings();
+      slider.addSlides(movies);
 
-  // Grid
-  const render = new Render();
-  render.movieGrid(movies);
+      // Grid
+      const render = new Render();
 
-  // Filtering
-  const filtering = new Filtering();
-} else {
-  const singleMovie = new SingleMovie();
-  singleMovie.getSingleMovieData(movies);
+      // Filtering
+      const filtering = new Filtering();
+    }
+    break;
+
+  case '/single.html':
+    {
+      // Single Movies
+      const singleMovie = new SingleMovie();
+      singleMovie.getSingleMovieData(movies);
+    }
+    break;
+
+  case '/search.html':
+    {
+      const search = new Search();
+    }
+    break;
 }
-
 // Watchlist
 const watchlist = new Watchlist();
