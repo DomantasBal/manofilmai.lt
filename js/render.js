@@ -23,14 +23,16 @@ class Render {
       movieCard.innerHTML = `
         <div>
           <a href="/single.html?id=${movie.id}">
-            <img src="${movie.poster}" class="card-img-top" alt="" />
+            <img src="${movie.poster}" class="card-img-top" alt=""  />
           </a>
           <div class="card-body">
             <h5 class="movie-title">${movie.title}</h5>
             <div class="movie-rating"><i class="fas fa-star text-secondary"></i> ${movie.rating} / 10</div>
             <div class="movie-year"><p>${movie.year}</p></div>
             <div class="card-tags">
-              ${movie.genre.map((g) => `<span class="card-tag"><a href="#">${g}</a></span>`).join('')}
+              ${movie.genre
+                .map((g) => `<span class="card-tag"><a href="/search.html?genre=${g}">${g}</a></span>`)
+                .join('')}
             </div>
           </div>
         </div>
