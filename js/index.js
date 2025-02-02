@@ -12,7 +12,7 @@ const router = new Router();
 console.log('index.js');
 
 switch (router.getRoute()) {
-  case '/':
+  case '/manofilmai.lt/':
     {
       // Slider
       const slider = new Slider();
