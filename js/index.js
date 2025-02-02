@@ -9,6 +9,8 @@ import Search from './search.js';
 import Router from './router.js';
 const router = new Router();
 
+console.log('index.js');
+
 switch (router.getRoute()) {
   case '/':
     {
