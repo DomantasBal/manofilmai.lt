@@ -9,10 +9,8 @@ import Search from './search.js';
 import Router from './router.js';
 const router = new Router();
 
-console.log('index.js');
-
 switch (router.getRoute()) {
-  case '/manofilmai.lt/':
+  case '/':
     {
       // Slider
       const slider = new Slider();
@@ -37,6 +35,7 @@ switch (router.getRoute()) {
 
   case '/search.html':
     {
+      // Search
       const search = new Search();
     }
     break;

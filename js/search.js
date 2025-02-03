@@ -1,11 +1,21 @@
+import movies from './mockMovies.js';
+import Render from './render.js';
+
 class Search {
   constructor() {
-    const cardTags = document.querySelectorAll('.card-tag');
-    cardTags.forEach((tag) => tag.addEventListener('click', this.searchByTag));
+    this.render = new Render();
+    this.params = new URLSearchParams(window.location.search);
+    this.genre = this.params.get('genre');
+    this.displayResults(this.genre);
   }
 
-  searchByTag() {
-    window.location.href = '/search.html';
+  displayResults(genre) {
+    const filtered = movies.filter((movie) => {
+      const result = movie.genre.includes(genre);
+      return result;
+    });
+
+    this.render.movieGrid(filtered);
   }
 }
 

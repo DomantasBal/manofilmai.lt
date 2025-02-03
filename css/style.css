@@ -130,6 +130,13 @@ ul {
   margin-left: 10px;
 }
 
+.movie-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
 /* SWIPER */
 .swiper {
   width: 100%;
@@ -329,7 +336,7 @@ ul {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  padding: 0px 30px 30px;
+  padding: 0px 30px;
 }
 .movie-tag {
   border: solid 2px var(--color-secondary);
@@ -504,10 +511,14 @@ ul {
   background: url(../images/bg-main-dark.jpg) no-repeat center center/cover;
 }
 
-section,
 h1,
 h2 {
-  margin-bottom: 20px;
+  margin: 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+section {
   text-align: center;
   text-transform: uppercase;
 }

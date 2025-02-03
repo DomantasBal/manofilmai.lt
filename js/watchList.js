@@ -33,6 +33,9 @@ class Watchlist {
       if (this.watchlist.some((movie) => movie.id == movieId)) {
         btn.classList.add('added-to-watchlist');
         btn.innerHTML = '<i class="fa-solid fa-heart heart-pop"></i><span class="watchlist-text">Įsiminta</span>';
+      } else {
+        btn.classList.remove('added-to-watchlist');
+        btn.innerHTML = '<i class="fa-regular fa-heart heart-pop"></i><span class="watchlist-text">Įsiminta</span>';
       }
     });
   }
@@ -158,11 +161,17 @@ class Watchlist {
       const movieElement = document.createElement('div');
       movieElement.classList.add('sidebar-movie');
       movieElement.setAttribute('movie-data-id', movie.id);
-      movieElement.innerHTML = `<p class="movie-number">${index + 1}</p><img src="${movie.poster}" alt="${
-        movie.title
-      }" /><p class="movie-title-sidebar">${
-        movie.title
-      }</p><div class="controls"><i class="fa-solid fa-xmark" data-id="${movie.id}"></i></div>`;
+      movieElement.innerHTML = `
+      <a href="/single.html?id=${movie.id}" class="movie-link">
+        <p class="movie-number">${index + 1}</p>
+        <img src="${movie.poster}" alt="${movie.title}" />
+        <p class="movie-title-sidebar">${movie.title}</p>
+      </a>
+      <div class="controls">
+        <i class="fa-solid fa-xmark" data-id="${movie.id}"></i>
+      </div>
+    `;
+
       sidebarContent.appendChild(movieElement);
     });
     this.sidebarRemoveMovie();

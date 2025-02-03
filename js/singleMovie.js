@@ -51,7 +51,13 @@ class SingleMovie {
             <h5>Žanras</h5>
 
             <div class="tag-container">
-          ${movie.genre.map((genre) => `<span class="movie-tag">${genre}</span>`).join('')}
+          ${movie.genre
+            .map(
+              (genre) => `<span class="movie-tag">
+            <a href="/search.html?genre=${genre}">${genre}</a>
+            </span>`
+            )
+            .join('')}
             </div>
           </div>
         </div>
