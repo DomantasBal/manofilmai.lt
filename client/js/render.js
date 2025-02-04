@@ -4,6 +4,7 @@ class Render {
   constructor() {
     this.grid = document.getElementById('movie-grid');
     this.movies = movies;
+    this.placeholder = 'images/placeholder.jpg';
   }
 
   movieGrid(movies) {
