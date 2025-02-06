@@ -1,16 +1,21 @@
-import movies from './mockMovies.js'; // MockDATA
+// ################### Index.js ###################
+
+import { fetchMovies } from './services/tmdbService.js'; // Movie Data
 import Render from './render.js';
 import Slider from './slider.js';
 import Filtering from './filtering.js';
 import Watchlist from './watchList.js';
 import SingleMovie from './singleMovie.js';
 import Search from './search.js';
-
 import Router from './router.js';
-const router = new Router();
 
+// // Fetch movies
+const movies = await fetchMovies();
+
+// Router
+const router = new Router();
 switch (router.getRoute()) {
-  case '/':
+  case '/client/':
     {
       // Slider
       const slider = new Slider();
@@ -21,7 +26,7 @@ switch (router.getRoute()) {
       const render = new Render();
 
       // Filtering
-      const filtering = new Filtering();
+      // const filtering = new Filtering();
     }
     break;
 

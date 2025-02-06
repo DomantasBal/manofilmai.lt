@@ -1,3 +1,5 @@
+// ################### SingleMovie.js ###################
+
 class SingleMovie {
   constructor() {
     this.movieDetailsContainer = document.querySelector('#movie-details');

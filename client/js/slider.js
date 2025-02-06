@@ -1,4 +1,4 @@
-// ################### SLIDER ###################
+// ################### Slider.js ###################
 class Slider {
   constructor() {
     this.slider = document.querySelector('.swiper-wrapper');
@@ -6,21 +6,29 @@ class Slider {
 
   addSlides(movies) {
     movies.forEach((movie) => {
+      const posterUrl = this.__formPosterUrl(movie.poster_path);
+
+      console.log(movie);
+
       this.slider.innerHTML += `
           <div class="swiper-slide">
         <a href="/single.html?id=${movie.id}">
           <img
-            src="${movie.poster}"
+            src="${posterUrl}"
             alt=""
           />
         </a>
         <p class="movie-title slide-title">${movie.title}</p>
         <div class="movie-rating slider-rating">
-          <i class="fas fa-star text-secondary"></i> ${movie.rating} / 10
+          <i class="fas fa-star text-secondary"></i> ${movie.vote_average} / 10
         </div>
       </div>
           `;
     });
+  }
+
+  __formPosterUrl(poster_path) {
+    return `https://image.tmdb.org/t/p/w500/${poster_path}`;
   }
 
   initSettings() {

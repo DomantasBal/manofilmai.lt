@@ -1,6 +1,6 @@
-import Render from './render.js';
-import movies from './mockMovies.js';
+// ################### Filtering.js ###################
 
+import Render from './render.js';
 const render = new Render();
 
 class Filtering {

@@ -1,4 +1,5 @@
-import movies from './mockMovies.js';
+// ################### Search.js ###################
+
 import Render from './render.js';
 
 class Search {

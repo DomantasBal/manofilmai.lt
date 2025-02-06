@@ -1,4 +1,4 @@
-import movies from './mockMovies.js';
+// ################### Watchlist.js ###################
 
 class Watchlist {
   constructor() {

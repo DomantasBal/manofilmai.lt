@@ -1,10 +1,13 @@
-import movies from './mockMovies.js';
+// ################### Render.js ###################
+
+import { fetchMovies } from './services/tmdbService.js';
+const movies = await fetchMovies();
 
 class Render {
   constructor() {
     this.grid = document.getElementById('movie-grid');
-    this.movies = movies;
-    this.placeholder = 'images/placeholder.jpg';
+    this.placeholder = '/client/images/placeholder.jpg';
+    this.setMovies(movies);
   }
 
   movieGrid(movies) {
@@ -20,26 +23,32 @@ class Render {
     movies.forEach((movie) => {
       const movieCard = document.createElement('div');
       movieCard.classList.add('card');
+      const posterUrl = this.__formPosterUrl(movie.poster_path);
+      const releaseYear = movie.release_date ? new Date(movie.release_date).getFullYear() : 'Unknown';
 
       movieCard.innerHTML = `
         <div>
           <a href="/single.html?id=${movie.id}">
-            <img src="${movie.poster}" class="card-img-top" alt=""  />
+            <img src="${posterUrl ? posterUrl : this.placeholder}" class="card-img-top" alt="${movie.original_title}" />
           </a>
           <div class="card-body">
-            <h5 class="movie-title">${movie.title}</h5>
-            <div class="movie-rating"><i class="fas fa-star text-secondary"></i> ${movie.rating} / 10</div>
-            <div class="movie-year"><p>${movie.year}</p></div>
+            <h5 class="movie-title">${movie.original_title}</h5>
+            <div class="movie-rating">
+              <i class="fas fa-star text-secondary"></i> ${movie.vote_average} / 10
+            </div>
+            <div class="movie-year">
+              <p>${releaseYear}</p>
+            </div>
             <div class="card-tags">
-              ${movie.genre
+              ${movie.genres
                 .map((g) => `<span class="card-tag"><a href="/search.html?genre=${g}">${g}</a></span>`)
                 .join('')}
             </div>
           </div>
         </div>
         <div class="btn btn-watchlist" data-movie-id="${movie.id}">
-        <i class="fa-regular fa-heart"></i>
-        <span class="watchlist-text">Įsiminti</span>
+          <i class="fa-regular fa-heart"></i>
+          <span class="watchlist-text">Įsiminti</span>
         </div>
       `;
 
@@ -51,6 +60,7 @@ class Render {
       }, 10);
     });
 
+    // Genre filtering
     this.grid.addEventListener('click', (e) => {
       if (e.target.tagName === 'A' && e.target.parentElement.classList.contains('card-tag')) {
         const genre = e.target.innerText.trim();
@@ -59,9 +69,13 @@ class Render {
     });
   }
 
+  __formPosterUrl(poster_path) {
+    return poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : this.placeholder;
+  }
+
   filterMoviesByGenre(genre) {
     const filteredMovies = this.movies.filter((movie) =>
-      movie.genre.some((g) => g.toLowerCase().trim() === genre.toLowerCase().trim())
+      movie.genres.some((g) => g.toLowerCase().trim() === genre.toLowerCase().trim())
     );
 
     this.movieGrid(filteredMovies);
