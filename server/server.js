@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 3000;
-const asianLanguages = ['zh', 'ja', 'ko', 'th', 'hi'];
+const asianLanguages = ['zh', 'ja', 'ko', 'th', 'hi', 'ta'];
 
 app.get('/api/movies', async (req, res) => {
   try {
