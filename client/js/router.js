@@ -1,6 +1,10 @@
+// ################### Router.js ###################
+
 class Router {
   getRoute() {
-    return window.location.pathname;
+    const path = window.location.pathname;
+    console.log('DEBUG ROUTE:', path);
+    return path;
   }
 }
 

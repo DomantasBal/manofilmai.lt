@@ -14,6 +14,7 @@ const movies = await fetchMovies();
 
 // Router
 const router = new Router();
+
 switch (router.getRoute()) {
   case '/client/':
     {
@@ -30,7 +31,7 @@ switch (router.getRoute()) {
     }
     break;
 
-  case '/single.html':
+  case '/client/single.html':
     {
       // Single Movies
       const singleMovie = new SingleMovie();

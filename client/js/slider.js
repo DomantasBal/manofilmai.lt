@@ -8,11 +8,9 @@ class Slider {
     movies.forEach((movie) => {
       const posterUrl = this.__formPosterUrl(movie.poster_path);
 
-      console.log(movie);
-
       this.slider.innerHTML += `
           <div class="swiper-slide">
-        <a href="/single.html?id=${movie.id}">
+        <a href="single.html?id=${movie.id}">
           <img
             src="${posterUrl}"
             alt=""

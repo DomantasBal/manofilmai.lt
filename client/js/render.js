@@ -28,15 +28,15 @@ class Render {
 
       movieCard.innerHTML = `
         <div>
-          <a href="/single.html?id=${movie.id}">
+          <a href="/client/single.html?id=${movie.id}">
             <img src="${posterUrl ? posterUrl : this.placeholder}" class="card-img-top" alt="${movie.original_title}" />
           </a>
           <div class="card-body">
             <h5 class="movie-title">${movie.original_title}</h5>
             <div class="movie-rating">
               <i class="fas fa-star text-secondary"></i> ${movie.vote_average} / 10
-            </div>
-            <div class="movie-year">
+              </div>
+              <div class="movie-year">
               <p>${releaseYear}</p>
             </div>
             <div class="card-tags">
